@@ -1,0 +1,16 @@
+{% load static %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'task/styles.css' %}"/>
+
+<div class="center-column">
+    <p>Are you sure you want to delete "{{ item }}"?</p>
+
+    <a class="btn btn-sm btn-info" href="{% url 'list' %}">Cancel</a>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" name="Confirm">
+    </form>
+</div>
